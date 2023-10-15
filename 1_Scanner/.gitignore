@@ -1,0 +1,5 @@
+# apple directory
+.DS_Store
+
+# object files
+*.o

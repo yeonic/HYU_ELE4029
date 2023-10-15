@@ -104,9 +104,10 @@ TokenType getToken(void)
            state = INLT;
          else if (c == '>')
            state = INGT;
-        // TODO: make case INOVER(over or comment)
-         else if (c == '/')
+         else if (c == '/'){
            state = INOVER;
+           save = FALSE;
+         }
          else if ((c == ' ') || (c == '\t') || (c == '\n'))
            save = FALSE;
          else
