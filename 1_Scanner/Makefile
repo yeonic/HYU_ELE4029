@@ -19,7 +19,7 @@ cminus_cimpl: $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $(OBJS) 
 
 cminus_lex: $(OBJS_LEX)
-	$(CC) $(CFLAGS) -o $@ $(OBJS_LEX) -lfl
+	$(CC) $(CFLAGS) -o $@ $(OBJS_LEX)
 
 main.o: main.c globals.h util.h scan.h
 	$(CC) $(CFLAGS) -c -o $@ $<
