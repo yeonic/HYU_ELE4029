@@ -246,8 +246,9 @@ TokenType getToken(void)
            currentToken = NUM;
          }
          break;
+      // TODO: need to make ID act according to letter(letter|digit)*
        case INID:
-         if (!isalpha(c))
+         if (!isalnum(c))
          { /* backup in the input */
            ungetNextChar();
            save = FALSE;
