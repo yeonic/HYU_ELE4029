@@ -52,15 +52,15 @@ whitespace  [ \t]+
 {identifier}    {return ID;}
 {newline}       {lineno++;}
 {whitespace}    {/* skip whitespace */}
-"/*"            { char c;
-                  int asterflag = 0;
+"/*"            { char c, prev;
+                  prev = '\0';
                   do
                   { c = input();
-                    if (c == EOF) break;
+                    if (c == ENDFILE) break;
                     if (c == '\n') lineno++;
-                    if (c == '*') asterflag = 1;
-                    else if (c != '/') asterflag = 0;
-                  } while (c != '/' || asterflag != 1);
+                    if (c == '/' && prev == '*') break;
+                    prev = c;
+                  } while (1);
                 }
 .               {return ERROR;}
 
