@@ -193,15 +193,15 @@ TokenType getToken(void)
          break;
       case INNE:
          save = FALSE;
+         state = DONE;
          if (c == '=')
          {
-           state = DONE;
            currentToken = NE;
          }
          else
          { /* backup in the input */
           ungetNextChar();
-          state = START;
+          currentToken = ERROR;
          }
          break;      
       case INLT:
@@ -246,7 +246,6 @@ TokenType getToken(void)
            currentToken = NUM;
          }
          break;
-      // TODO: need to make ID act according to letter(letter|digit)*
        case INID:
          if (!isalnum(c))
          { /* backup in the input */
