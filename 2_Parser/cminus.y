@@ -159,6 +159,7 @@ selection_stmt		: IF LPAREN expression RPAREN statement ELSE statement
                               $$->child[0] = $3;
                               $$->child[1] = $5;
                               $$->child[2] = $7;
+                              $$->flag = TRUE;
                          }
                     | IF LPAREN expression RPAREN statement 
                          {
@@ -181,6 +182,7 @@ return_stmt         : RETURN SEMI
                          { 
                               $$ = newTreeNode(ReturnStmt);
                               $$->child[0] = NULL;
+                              $$->flag = TRUE;
                          }
                     | RETURN expression SEMI
                          { 

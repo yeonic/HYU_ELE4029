@@ -1,0 +1,17 @@
+{
+  "files.associations": {
+    "cstdlib": "c",
+    "mutex": "c",
+    "compare": "c",
+    "functional": "c",
+    "type_traits": "c",
+    "__hash_table": "c",
+    "atomic": "c",
+    "locale": "c",
+    "string": "c",
+    "unordered_map": "c",
+    "vector": "c",
+    "*.tcc": "c",
+    "random": "c"
+  }
+}
